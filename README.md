@@ -1,0 +1,2 @@
+# indoku
+Indianized Sudoku
