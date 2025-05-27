@@ -1,0 +1,346 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <!-- Google tag (gtag.js) -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-FK429NJD7D"></script>
+    <script>
+      window.dataLayer = window.dataLayer || [];
+      function gtag(){dataLayer.push(arguments);}
+      gtag('js', new Date());
+
+      gtag('config', 'G-FK429NJD7D');
+    </script>
+
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <link rel="icon" href="https://cdn.glitch.global/08bbda1c-c6e8-479c-a52f-cab0aaf4e3b5/indoku_icon.png" />
+
+    <title> Indoku </title>
+
+    <link rel="manifest" href="/manifest.json" >
+    <!-- The website stylesheet -->
+    <link rel="stylesheet" href="/style.css" />
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css?family=Roboto" rel="stylesheet">
+    
+    <!-- The website JavaScript file -->
+    <script src="/script.js" defer></script>
+  </head>
+  <body>
+<nav class="app-bar">
+  
+  <div class="bar-font title">Indoku</div>
+  <div id="moreoption-sec" class="more-option-div more-button">
+    <button onclick="moreOptionButtonClick()" class="button bar-button">
+      <span class="material-icons">more_vert</span>
+    </button>
+    <!-- it is important to put these styles in here because if I do not do that it will not work in javaScript-->
+    <div id="more-option-list" style="visibility: hidden; max-height: 14px; max-width: 50px; min-width: 50px;" class="more-option-list">
+      <button onclick="hintButtonClick()" ripple-color="#003c8f" class="button nav-item vertical-adjust">Hint</button>
+      <button onclick="restartButtonClick()" ripple-color="#003c8f" class="button nav-item vertical-adjust">Restart</button>
+      <button onclick="SurrenderButtonClick()" ripple-color="tomato" class="button nav-item vertical-adjust">Surrender</button>
+      <button onclick="pauseGameButtonClick()" ripple-color="tomato" class="button nav-item vertical-adjust">Pause</button>
+    </div>
+  </div>
+
+  <button id="lang-btn" onclick="showDialogClick('lang');" class="button bar-button more-button">
+    <span class="material-icons">language</span>
+    
+  </button>
+  <button id="check-btn" onclick="checkButtonClick()" class="button bar-button more-button">
+    <span class="material-icons">done_all</span>
+    <span>Submit</span>
+  </button>
+  <button id="add-btn" onclick="showDialogClick('dialog');" class="button bar-button more-button">
+    <span class="material-icons">add</span>
+    <span>New</span>
+  </button>
+</nav>
+
+<div class="floating">
+  <button onclick="showDialogClick('dialog');" class="button floating-btn vertical-adjust">
+    <span class="material-icons">add</span>
+  </button>
+</div>
+
+
+<div id="dialog" class="dialog">
+  <div id="dialog-box" class="dialog-content">
+    <div class="dialog-header">New game</div>
+
+    <div class="dialog-body">
+      <p>Select game difficulty to get started.</p>
+      <ul>
+        <li class="radio-option">
+          <label for="easy">
+            <input id="easy" value="easy" type="radio" name="difficulty" checked="checked"> Easy
+          </label>
+        </li>
+        <li class="radio-option">
+          <label for="normal">
+            <input id="normal" value="normal" type="radio" name="difficulty"> Normal
+          </label>
+        </li>
+        <li class="radio-option">
+          <label for="hard">
+            <input id="hard" value="hard" type="radio" name="difficulty"> Hard
+          </label>
+        </li>
+      </ul>
+    </div>
+
+    <div class="dialog-footer">
+      <button onclick="startGameButtonClick();" ripple-color="#003c8f" class="button dialog-btn vertical-adjust" autofocus>OK</button>
+      <button onclick="hideDialogButtonClick('dialog');" ripple-color="#202020" class="button dialog-btn vertical-adjust">Cancel</button>
+    </div>
+  </div>
+</div>
+
+<div id="lang" class="dialog">
+  <div id="lang-box" class="dialog-content">
+    <div class="dialog-header">Select Language</div>
+
+    <div class="dialog-body">
+      <p>Select language to get started.</p>
+      <ul>
+        <li class="radio-option">
+          <label for="Random">
+            <input id="Random" value="Random" type="radio" name="language" checked="checked"> Random
+          </label>
+        </li>
+        <li class="radio-option">
+          <label for="Kannada">
+            <input id="Kannada" value="Kannada" type="radio" name="language" > Kannada
+          </label>
+        </li>
+        <li class="radio-option">
+          <label for="Tamil">
+            <input id="Tamil" value="Tamil" type="radio" name="language"> Tamil
+          </label>
+        </li>
+        <li class="radio-option">
+          <label for="Telugu">
+            <input id="Telugu" value="Telugu" type="radio" name="language"> Telugu
+          </label>
+        </li>
+        <li class="radio-option">
+          <label for="Malayalam">
+            <input id="Malayalam" value="Malayalam" type="radio" name="language"> Malayalam
+          </label>
+        </li>
+        <li class="radio-option">
+          <label for="Marathi">
+            <input id="Marathi" value="Marathi" type="radio" name="language"> Marathi
+          </label>
+        </li>
+        <li class="radio-option">
+          <label for="Gujrati">
+            <input id="Gujrati" value="Gujrati" type="radio" name="language"> Gujrati
+          </label>
+        </li>
+        <li class="radio-option">
+          <label for="Gurmukhi">
+            <input id="Gurmukhi" value="Gurmukhi" type="radio" name="language"> Gurmukhi
+          </label>
+        </li>
+        <li class="radio-option">
+          <label for="Oriya">
+            <input id="Oriya" value="Oriya" type="radio" name="language"> Oriya
+          </label>
+        </li>
+        <li class="radio-option">
+          <label for="Bangla">
+            <input id="Bangla" value="Bangla" type="radio" name="language"> Bangla
+          </label>
+        </li>
+        <li class="radio-option">
+          <label for="Asomiya">
+            <input id="Asomiya" value="Asomiya" type="radio" name="language"> Asomiya
+          </label>
+        </li>
+        <li class="radio-option">
+          <label for="Urdu">
+            <input id="Urdu" value="Urdu" type="radio" name="language"> Urdu
+          </label>
+        </li>
+      </ul>
+    </div>
+
+    <div class="dialog-footer">
+      <button onclick="startGameButtonClick();" ripple-color="#003c8f" class="button dialog-btn vertical-adjust" autofocus>OK</button>
+      <button onclick="hideDialogButtonClick('lang');" ripple-color="#202020" class="button dialog-btn vertical-adjust">Cancel</button>
+    </div>
+  </div>
+</div>
+
+<div class="body" id="sudoku">
+  <div class="card game">
+    <div id="language-1"></div>
+    <table id="puzzle-grid">
+      <tr>
+        <td>
+          <input type="text" maxlength="1" onchange="checkInput(this)" disabled />
+        </td>
+        <td>
+          <input type="text" maxlength="1" onchange="checkInput(this)" disabled />
+        </td>
+
+        <td>
+          <input type="text" maxlength="1" onchange="checkInput(this)" disabled />
+        </td>
+        <td>
+          <input type="text" maxlength="1" onchange="checkInput(this)" disabled />
+        </td>
+
+      </tr>
+
+      <tr>
+        <td>
+          <input type="text" maxlength="1" onchange="checkInput(this)" disabled />
+        </td>
+        <td>
+          <input type="text" maxlength="1" onchange="checkInput(this)" disabled />
+        </td>
+
+        <td>
+          <input type="text" maxlength="1" onchange="checkInput(this)" disabled />
+        </td>
+        <td>
+          <input type="text" maxlength="1" onchange="checkInput(this)" disabled />
+        </td>
+
+      </tr>
+
+      <tr>
+        <td>
+          <input type="text" maxlength="1" onchange="checkInput(this)" disabled />
+        </td>
+        <td>
+          <input type="text" maxlength="1" onchange="checkInput(this)" disabled />
+        </td>
+
+        <td>
+          <input type="text" maxlength="1" onchange="checkInput(this)" disabled />
+        </td>
+        <td>
+          <input type="text" maxlength="1" onchange="checkInput(this)" disabled />
+        </td>
+
+      </tr>
+
+      <tr>
+        <td>
+          <input type="text" maxlength="1" onchange="checkInput(this)" disabled />
+        </td>
+        <td>
+          <input type="text" maxlength="1" onchange="checkInput(this)" disabled />
+        </td>
+
+        <td>
+          <input type="text" maxlength="1" onchange="checkInput(this)" disabled />
+        </td>
+        <td>
+          <input type="text" maxlength="1" onchange="checkInput(this)" disabled />
+        </td>
+
+      </tr>
+    </table>
+    <div id="language-2"></div>
+    
+        <div class="vertical-adjust">
+          <span class="material-icons">grid_on</span>
+          <span>Remaining numbers</span>
+        </div>
+        <div class="remain-table">
+          <div class="remain-column">
+            <div class="remain-cell">
+              <div class="remain-cell-header">1</div>
+              <div onchange="document.write('Hello');" id="remain-1" class="remain-cell-content">0</div>
+            </div>
+          </div>
+          <div class="remain-column">
+            <div class="remain-cell">
+              <div class="remain-cell-header">2</div>
+              <div id="remain-2" class="remain-cell-content">0</div>
+            </div>
+          </div>
+          <div class="remain-column">
+            <div class="remain-cell">
+              <div class="remain-cell-header">3</div>
+              <div id="remain-3" class="remain-cell-content">0</div>
+            </div>
+          </div>
+          <div class="remain-column">
+            <div class="remain-cell">
+              <div class="remain-cell-header">4</div>
+              <div id="remain-4" class="remain-cell-content">0</div>
+            </div>
+          </div>
+
+        </div>
+  </div>
+
+  <div class="card status">
+    <div id="game-number">game #0</div>
+    <ul class="game-status">
+      <li>
+        <div class="vertical-adjust">
+          <span class="material-icons">timer</span>
+          <span id="timer-label">Time</span>
+        </div>
+        <div id="timer" class="timer">00:00</div>
+      </li>
+
+      <li>
+        <div class="vertical-adjust">
+          <span class="material-icons">network_check</span>
+          <span id="game-difficulty-label">Status</span>
+        </div>
+        <div id="game-difficulty" class="timer">Start?</div>
+      </li>
+      <li>
+      </li>
+    </ul>
+
+    <!--<button class="option-button">
+                    <span class="material-icons">pause</span>
+                    <span>Pause</span>
+                </button>
+                <button class="option-button">
+                    <span class="material-icons">done_all</span>
+                    <span>Check</span>
+                </button>
+                <button class="option-button">
+                    <span class="material-icons">help</span>
+                    <span>Hint</span>
+                </button>
+                <button class="option-button">
+                    <span class="material-icons">refresh</span>
+                    <span>Restart</span>
+                </button>
+                <button class="option-button">
+                    <span class="material-icons">flag</span>
+                    <span>Surrender</span>
+                </button>
+            -->
+  </div>
+</div>
+    <script>
+      if ("serviceWorker" in navigator) {
+        window.addEventListener("load", function() {
+          navigator.serviceWorker
+            .register("/serviceWorker.js")
+            .then(res => console.log("service worker registered"))
+            .catch(err => console.log("service worker not registered", err))
+        })
+      }
+    </script>
+
+<div class="footer vertical-adjust">
+  <footer class="footer">
+  <span style="white-space: nowrap"> &copy; 2024 <a href="https://www.pradeepd.com/hobbies/apps">Pradeep D</a>, <a href="https://www.iseek.page">iSeek</a>. Courtesy: codeTeam6 </span>
+  <br> <a href="https://www.buymeacoffee.com/pradeepde">Buy me a coffee</a>
+  </footer>
+</div>
+  </body>
+</html>
