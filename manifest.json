@@ -1,0 +1,16 @@
+{
+  "name": "Indoku",
+  "short_name": "Indoku",
+  "start_url": "https://indoku.glitch.me/",
+  "icons": [
+    {
+      "src": "https://cdn.glitch.global/08bbda1c-c6e8-479c-a52f-cab0aaf4e3b5/indoku_icon.png",
+      "sizes": "256x256",
+      "type": "image/png"
+    }
+  ],
+  "theme_color": "#49599a",
+  "background_color": "#49599a",
+  "display": "fullscreen",
+  "orientation": "portrait"
+}
