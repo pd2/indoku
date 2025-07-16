@@ -771,7 +771,7 @@ function checkButtonClick() {
       
       // alert("Congrats, You solved it.");
       
-      let linkURL = "https://pd2.github.io/indoku/";
+      let linkURL = window.location.href;
 
       copyText = `I solved #Indoku Indianized sudoku puzzle with ${display_scripts[0]} and ${display_scripts[3]} scripts in ${timer} sec at ${linkURL}`;
 
