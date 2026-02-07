@@ -1,5 +1,5 @@
 const staticDev = "indoku"
-const service_worker_version = "v1.06"
+const service_worker_version = "v1.061"
 const assets = [
   "/",
   "index.html",
